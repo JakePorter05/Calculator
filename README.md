@@ -23,9 +23,15 @@ The solution contains two main components:
   - Addition  
   - Subtraction  
   - Multiplication  
-  - Division  
+  - Division
+- With some non-basic operations:
+  - Log
+  - 10x
+  - Power
+  - Square Root
 - Clean separation of concerns using a dedicated library project  
-- Simple, readable console interface  
+- Simple, readable console interface
+- Simple speech to text for requestion numbers if enabled with Azure services.
 - Demonstrates foundational C# concepts:
   - Methods  
   - Namespaces  
