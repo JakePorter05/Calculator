@@ -44,3 +44,12 @@ The solution contains two main components:
 1. Clone the repository:
    ```bash
    git clone https://github.com/JakePorter05/Calculator
+2. Add App secrets for the speech to text service
+```
+{
+  "SpeechService": {
+    "Key": "Key",
+    "Region": "region"
+  }
+}
+```
