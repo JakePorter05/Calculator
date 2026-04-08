@@ -20,13 +20,13 @@ while (!endApp)
     Console.WriteLine("H : See previous Calculations");
     var selection = Console.ReadLine();
 
-    if (selection == null || !Regex.IsMatch(selection, "[c|e|m|h]"))
+    if (selection == null || !Regex.IsMatch(selection, "[c|e|m|h|C|E|M|H]"))
     {
         Console.WriteLine("Error: Unrecognized input.");
     }
     else
     {
-        switch (selection)
+        switch (selection.ToLower().Trim())
         {
             case "e":
                 {
@@ -52,7 +52,7 @@ while (!endApp)
                     Console.WriteLine("Note: Clearing the history will also clear the current result.");
                     Console.WriteLine("Press any other key and Enter to return to the main menu.");
                     Console.ReadLine();
-                    if (Console.ReadLine() == "c")
+                    if (Console.ReadLine()?.ToLower().Trim() == "c")
                     {
                         calculator.ClearCalculations();
                         calculator.ClearValues();
@@ -80,7 +80,7 @@ while (!endApp)
 
     // Wait for the user to respond before closing.
     Console.Write("Press 'n' and Enter to close the app, or press any other key and Enter to continue: ");
-    if (Console.ReadLine() == "n") endApp = true;
+    if (Console.ReadLine()?.ToLower().Trim() == "n") endApp = true;
 
     Console.WriteLine("\n"); // Friendly linespacing.
 }

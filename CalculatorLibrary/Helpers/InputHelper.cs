@@ -138,24 +138,24 @@ public class InputHelper
     {
         // Ask the user to choose an operator.
         Console.WriteLine("Choose an operator from the following list:");
-        Console.WriteLine("\ta - Add");
-        Console.WriteLine("\ts - Subtract");
-        Console.WriteLine("\tm - Multiply");
-        Console.WriteLine("\td - Divide");
-        Console.WriteLine("\tr - Square Root");
-        Console.WriteLine("\tp - Power");
-        Console.WriteLine("\tw - 10x");
-        Console.WriteLine("\tt - Sin(x)");
+        Console.WriteLine("\tA - Add");
+        Console.WriteLine("\tS - Subtract");
+        Console.WriteLine("\tM - Multiply");
+        Console.WriteLine("\tD - Divide");
+        Console.WriteLine("\tR - Square Root");
+        Console.WriteLine("\tP - Power");
+        Console.WriteLine("\tW - 10x");
+        Console.WriteLine("\tT - Sin(x)");
         Console.Write("Your option? ");
 
-        string? operand = Console.ReadLine();
+        string? operand = Console.ReadLine()?.ToLower().Trim();
 
         // Validate input is not null, and matches the pattern
-        while (string.IsNullOrEmpty(operand) || !Regex.IsMatch(operand, "[a|s|m|d|r|p|w|t]"))
+        while (string.IsNullOrEmpty(operand) || !Regex.IsMatch(operand, "[a|s|m|d|r|p|w|t|A|S|M|D|R|P|W|T]"))
         {
             Console.WriteLine("Error: Unrecognized input.");
             Console.Write("Your option? ");
-            operand = Console.ReadLine();
+            operand = Console.ReadLine()?.ToLower().Trim();
         }
 
         Calculator.Calculation.Operator = operand;
